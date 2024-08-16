@@ -6,35 +6,93 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<!doctype html>
-<html lang="en">
+<!-- html-->
+<html lang="en" data-theme="light">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
+		<meta charset="utf-8" />
+		<meta name="title" content="Functionall Dysfunctional - Video Player" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/x-icon" href="favicon-agni.ico" />
+		<meta
+			name="description"
+			content="Functionally Dysfunctional Video Player plays video when you only do certain things."
+		/>
+		<meta
+			name="keywords"
+			content="Functionally Dysfunctional, Rajaneesh, Video Player, CodingWithLewis, CodingWithLewis Youtube, Hackathon, CodingWithLewis Hackathon, CodingWithLewis Youtube Hackathon"
+		/>
+		<meta name="robots" content="index, follow" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="language" content="English" />
+		<meta name="revisit-after" content="0.5 days" />
+		<meta name="author" content="Rajaneesh" />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="127.0.0.1" />
+		<meta property="og:title" content="Functionall Dysfunctional - Video Player" />
+		<meta
+			property="og:description"
+			content="Functionally Dysfunctional Video Player plays video when you only do certain things."
+		/>
+		<meta property="og:image" content="https://metatags.io/images/meta-tags.png" />
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="127.0.0.1" />
+		<meta property="twitter:title" content="Functionall Dysfunctional - Video Player" />
+		<meta
+			property="twitter:description"
+			content="Functionally Dysfunctional Video Player plays video when you only do certain things."
+		/>
+		<meta property="twitter:image" content="https://metatags.io/images/meta-tags.png" />
+    <link href="https://vjs.zencdn.net/8.16.1/video-js.css" rel="stylesheet" />
 	</head>
 	<body>
 		<slot />
 	</body>
 </html>
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+	[data-theme="light"] {
+		--background-color: #f1f1f1;
+		--text-color: #000000;
+		--background-header-color: #e0e0e0;
+		--background-shadow-color: #ffffff30;
+		--background-navigation-menu-color: #e0e0e0;
+		--background-navigation-item-color: #ffffff;
+		--notification-information: #89b4ff;
+		--notification-success: #00d057;
+		--notification-warning: #baba00;
+		--notification-error: #ff9695;
+		--background-button-color: #cecece;
+	}
+	[data-theme="dark"] {
+		/* Dark Theme */
+		--background-color: #1f1f1f;
+		--text-color: #ffffff;
+		--background-header-color: #111111;
+		--background-shadow-color: #ffffff30;
+		--background-navigation-menu-color: #111111;
+		--background-navigation-item-color: #000000;
+		--notification-information: #1976d2;
+		--notification-success: #388e3c;
+		--notification-warning: #ffd600;
+		--notification-error: #d32f2f;
+		--background-button-color: #424242;
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background: #13151a;
+
+		background: var(--background-color);
+		color: var(--text-color);
+	}
+	body {
+		font-family: Arial, sans-serif;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		margin: 0;
 	}
 	code {
 		font-family:
@@ -48,3 +106,5 @@ const { title } = Astro.props;
 			monospace;
 	}
 </style>
+
+<script src="https://vjs.zencdn.net/8.16.1/video.min.js"></script>

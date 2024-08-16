@@ -10,8 +10,19 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.13.3",
     "@astrojs/check": "^0.9.2",
-    "typescript": "^5.5.4"
+    "@astrojs/upgrade": "^0.3.1",
+    "astro": "^4.13.3",
+    "jquery": "^3.7.1",
+    "typescript": "^5.5.4",
+    "video.js": "^8.17.3"
+  },
+  "author": {
+    "name": "Rajaneesh",
+    "email": "rajaneeshr@proton.me"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.30",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }
